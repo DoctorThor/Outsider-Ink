@@ -8,7 +8,7 @@ Make photos framed in the same size on computer
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outsider Ink</title>
+<title>Outsider♥Ink</title>
 <link rel="icon" type="image/png" href="Oak_Log.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -490,10 +490,22 @@ Make photos framed in the same size on computer
     text-transform: uppercase;
     padding: 0.4rem 0.9rem;
     border: 1px solid var(--border);
-    color: var(--muted);
+    color: var(--white);
   }
   .style-tag.hot { border-color: var(--pink); color: var(--pink); }
   .style-tag.red { border-color: var(--red); color: var(--red); }
+
+  /* Behold Instagram Feed */
+  .behold-wrap {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  behold-widget {
+    --behold-background-color: transparent;
+    --behold-gap: 2px;
+    display: block;
+    width: 100%;
+  }
 
   /* Flash */
   #flash { background: var(--deep); }
@@ -683,7 +695,14 @@ Make photos framed in the same size on computer
     margin-top: 2rem;
     font-style: italic;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--white);
+    text-align: center;
+  }
+  .pricing-note-red {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--red);
     text-align: center;
   }
   .pricing-note a { color: var(--pink); text-decoration: none; }
@@ -1019,6 +1038,17 @@ Make photos framed in the same size on computer
     50% { box-shadow: 0 0 0 6px rgba(212,43,43,0); }
   }
 
+  /* Grouped portfolio items — subtle outline to show they belong together */
+  .portfolio-item[data-group] {
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    transition: outline-color 0.2s;
+  }
+  .portfolio-item[data-group]:hover {
+    outline-color: var(--pink);
+    z-index: 1;
+  }
+
   /* Reveal on scroll */
   .reveal {
     opacity: 0;
@@ -1082,9 +1112,9 @@ Make photos framed in the same size on computer
     <p class="hero-tag">Tattoo Artist — Since 2022</p>
     <h1 class="hero-name">
       Outsider<br><span class="accent">Ink</span>
-	  <!-- Outsider<span class="accent">♥</span><span class="accent2">Ink</span> -->
+	  <!-- Outsider<span class="accent">♥</span><span>Ink</span> -->
     </h1>
-    <p class="hero-sub">Permanence is the point.</p>
+    <p class="hero-sub">Confidence is the key. Permanence is the point.</p>
     <div class="hero-divider"></div>
     <p class="hero-desc">Custom tattoos across many styles — from delicate fine line to bold traditional. Every piece is designed for you, on you, forever.</p>
     <div class="hero-cta">
@@ -1112,7 +1142,7 @@ Make photos framed in the same size on computer
     <button class="filter-btn" data-filter="neo-trad">Neo-Traditional/Traditional</button>
     <button class="filter-btn" data-filter="colorwork">Colorwork</button>
     <button class="filter-btn" data-filter="anime">Anime/Cartoons</button>
-    <button class="filter-btn" data-filter="floral">Floral</button>
+    <button class="filter-btn" data-filter="floral">Botanical</button>
 	<button class="filter-btn" data-filter="arm">Arm</button>
 	<button class="filter-btn" data-filter="torso">Torso</button>
 	<button class="filter-btn" data-filter="leg">Leg</button>
@@ -1121,8 +1151,17 @@ Make photos framed in the same size on computer
   </div>
   <div class="portfolio-grid" id="portfolioGrid">
     <!-- Replace .portfolio-placeholder with <img> tags when you have photos -->
-    <div class="portfolio-item" data-styles="fine-line blackwork anime arm">
+    <div class="portfolio-item" data-styles="fine-line blackwork anime arm" data-group="Titan">
       <img src="./assets/Anime - Titan Part 1.jpg" alt="Colossal Titan" decoding="async" fetchpriority="high">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Fine Line, Blackwork, Anime, Arm</span>
+          <span class="overlay-title">Colossal Titan - Lower</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="fine-line blackwork anime arm" data-group="Titan">
+      <img src="./assets/Anime - Titan Part 2.jpg" alt="Colossal Titan" decoding="async" fetchpriority="high">
       <div class="portfolio-overlay">
         <div class="overlay-info">
           <span class="overlay-style">Fine Line, Blackwork, Anime, Arm</span>
@@ -1179,7 +1218,7 @@ Make photos framed in the same size on computer
       <img src="./assets/Fineline - Flowers.jpg" alt="Fineline Flowers" loading="lazy" decoding="async">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Fineline</span>
+          <span class="overlay-style">Fineline, Botanical</span>
           <span class="overlay-title">Flowers</span>
         </div>
       </div>
@@ -1269,7 +1308,7 @@ Make photos framed in the same size on computer
       <img src="./assets/Blackwork - Floral.jpg" alt="Flower" loading="lazy" decoding="async">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Blackwork, Floral</span>
+          <span class="overlay-style">Blackwork, Botanical</span>
           <span class="overlay-title">Flower</span>
         </div>
       </div>
@@ -1278,7 +1317,7 @@ Make photos framed in the same size on computer
       <img src="./assets/Blackwork - Floral 2.jpg" alt="Flower" loading="lazy" decoding="async">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Blackwork, Floral</span>
+          <span class="overlay-style">Blackwork, Botanical</span>
           <span class="overlay-title">Flower</span>
         </div>
       </div>
@@ -1386,7 +1425,7 @@ Make photos framed in the same size on computer
       <img src="./assets/Colorwork - Floral.jpg" alt="Colorful Flowers" loading="lazy" decoding="async">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Colorwork, Floral</span>
+          <span class="overlay-style">Colorwork, Botanical</span>
           <span class="overlay-title">Colorful Flowers</span>
         </div>
       </div>
@@ -1418,11 +1457,11 @@ Make photos framed in the same size on computer
         </div>
       </div>
     </div>
-	<div class="portfolio-item" data-styles="blackwork colorwork healed">
+	<div class="portfolio-item" data-styles="colorwork healed">
       <img src="./assets/Colorwork - Skull - Healed.jpg" alt="Rose Crown Skull" loading="lazy" decoding="async">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Blackwork, Colorwork, Healed</span>
+          <span class="overlay-style">Colorwork, Healed</span>
           <span class="overlay-title">Rose Crown Skull</span>
         </div>
       </div>
@@ -1681,7 +1720,7 @@ Make photos framed in the same size on computer
       <span class="section-num">02</span>
       <h2 class="section-title">About</h2>
     </div>
-    <p class="about-intro">Tattoos are not decoration — they're <em>decisions</em>.</p>
+    <p class="about-intro">Tattoos are not decoration — they're <em>permanent expressions</em> of who we are.</p>
     <p class="about-body">
       Trinidaddy is a tattoo artist based in Spokane Washington, specializing in a diverse range of styles. With over 4 years behind the needle, she approaches every piece with the same commitment: to create something that fits you, flatters your body, and lasts a lifetime.
       <br><br>
@@ -1693,8 +1732,7 @@ Make photos framed in the same size on computer
       <span class="style-tag red">Traditional</span>
       <span class="style-tag hot">Neo-Traditional</span>
       <span class="style-tag">Anime</span>
-      <span class="style-tag">Botanical</span>
-      <span class="style-tag hot">Geometric</span>
+      <span class="style-tag hot">Botanical</span>
     </div>
     <div class="about-stats">
       <div class="stat">
@@ -1720,99 +1758,9 @@ Make photos framed in the same size on computer
     <h2 class="section-title">Flash Designs</h2>
     <div class="section-line"></div>
   </div>
-  <p class="flash-intro reveal">Ready-to-go designs available at a flat rate. Flash can be tattooed as-is or with minor adjustments. First come, first served — once it's gone, it's gone.</p>
-  <div class="flash-grid reveal">
-    <div class="flash-card">
-      <div class="flash-img">
-        🌹
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Classic Rose</p>
-        <p class="flash-size">Approx. 3" × 3"</p>
-        <p class="flash-price">$180</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🦋
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Moth Study</p>
-        <p class="flash-size">Approx. 4" × 3"</p>
-        <p class="flash-price">$220</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        ⚡
-        <span class="flash-taken">Taken</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Dagger & Snake</p>
-        <p class="flash-size">Approx. 5" × 2"</p>
-        <p class="flash-price" style="color:var(--muted)">Taken</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🌙
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Crescent Moon</p>
-        <p class="flash-size">Approx. 2" × 2"</p>
-        <p class="flash-price">$120</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🕷️
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Spider & Web</p>
-        <p class="flash-size">Approx. 3" × 3"</p>
-        <p class="flash-price">$160</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🗡️
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Ornate Dagger</p>
-        <p class="flash-size">Approx. 5" × 1.5"</p>
-        <p class="flash-price">$200</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🌺
-        <span class="flash-taken">Taken</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Peony Bloom</p>
-        <p class="flash-size">Approx. 4" × 4"</p>
-        <p class="flash-price" style="color:var(--muted)">Taken</p>
-      </div>
-    </div>
-    <div class="flash-card">
-      <div class="flash-img">
-        🔮
-        <span class="flash-available">Available</span>
-      </div>
-      <div class="flash-info">
-        <p class="flash-title">Crystal Ball</p>
-        <p class="flash-size">Approx. 3" × 3"</p>
-        <p class="flash-price">$175</p>
-      </div>
-    </div>
-  </div>
-  <div class="flash-note reveal">
-    Flash designs update regularly. Follow on Instagram for new drops — they often go within hours. DM to claim a design before booking.
+  <p class="flash-intro reveal">Available flash designs live on Instagram/Facebook and in person. Message to claim. First come, first served.</p>
+  <div class="behold-wrap reveal">
+    <behold-widget feed-id="yegxPuNPv8rIY8J918kV"></behold-widget>
   </div>
 </section>
 
@@ -1823,34 +1771,33 @@ Make photos framed in the same size on computer
     <h2 class="section-title">Pricing</h2>
     <div class="section-line"></div>
   </div>
-  <p class="pricing-intro reveal">All quotes are approximate until we discuss your piece in detail. A non-refundable deposit of $50–$100 is required to hold your appointment and is applied to the final cost.</p>
+  <p class="pricing-intro reveal">All quotes are approximate until we discuss your piece in detail. A non-refundable deposit of $50–$200* is required to hold your appointment and is applied to the final cost.</p>
   <div class="pricing-grid reveal">
     <div class="pricing-tier">
       <p class="tier-name">Small</p>
-      <p class="tier-price"><span class="currency">$</span>150<span class="per"> / starting at</span></p>
+      <p class="tier-price"><span class="currency">$</span>135**<span class="per"> / starting at</span></p>
       <p class="tier-desc">Simple designs under 2 inches. Perfect for flash, words, symbols, and minimal work.</p>
       <ul class="tier-features">
-        <li>Under 2" in size</li>
+        <li>Under 3" in size</li>
         <li>Single session</li>
         <li>Flash or simple custom</li>
-        <li>Touch-up included</li>
+        <li>Free touch-up included</li>
       </ul>
     </div>
     <div class="pricing-tier featured">
       <p class="tier-name">Medium</p>
-      <p class="tier-price"><span class="currency">$</span>300<span class="per"> / starting at</span></p>
-      <p class="tier-desc">The sweet spot. Detailed pieces from 2–5 inches. Most custom work falls here.</p>
+      <p class="tier-price"><span class="currency">$</span>275**<span class="per"> / starting at</span></p>
+      <p class="tier-desc">The sweet spot. Most flash/custom work falls here. Detailed pieces from 3–5 inches.</p>
       <ul class="tier-features">
         <li>2–5" in size</li>
-        <li>Custom design included</li>
-        <li>1–3 hour session</li>
-        <li>All styles available</li>
-        <li>Touch-up included</li>
+        <li>Flash or custom designs</li>
+        <li>Typically a 1–3 hour session</li>
+        <li>Free touch-up included</li>
       </ul>
     </div>
     <div class="pricing-tier">
       <p class="tier-name">Large / Sleeves</p>
-      <p class="tier-price"><span class="currency">$</span>200<span class="per"> / hr</span></p>
+      <p class="tier-price"><span class="currency">$</span>150**<span class="per"> / hr</span></p>
       <p class="tier-desc">Large-scale, multi-session work. Sleeves, back pieces, full concepts. Let's talk.</p>
       <ul class="tier-features">
         <li>Hourly rate</li>
@@ -1861,7 +1808,8 @@ Make photos framed in the same size on computer
       </ul>
     </div>
   </div>
-  <p class="pricing-note reveal">Prices may vary depending on placement, complexity, and color. <a href="#contact">Contact me</a> for a custom quote.</p>
+  <p class="pricing-note reveal">*Prices and deposits may vary depending on placement, complexity, and color. <a href="#contact">Contact me</a> for a custom quote.</p>
+  <p class="pricing-note reveal">**Pricing <strong class="pricing-note-red">DOES NOT</strong> include sales tax.</p>
 </section>
 
 <!-- Booking Strip -->
@@ -2106,16 +2054,67 @@ Make photos framed in the same size on computer
   const activeFilters = new Set();
   const grid = document.getElementById('portfolioGrid');
 
-  // Shuffle portfolio on every page load (Fisher-Yates)
+  // Build ordered list respecting groups, then shuffle within/between groups
+  function buildShuffledOrder(items) {
+    // Separate grouped and ungrouped items
+    const groupMap = {};
+    const ungrouped = [];
+
+    items.forEach(item => {
+      const g = item.dataset.group;
+      if (g) {
+        if (!groupMap[g]) groupMap[g] = [];
+        groupMap[g].push(item);
+      } else {
+        ungrouped.push(item);
+      }
+    });
+
+    // Shuffle ungrouped items (Fisher-Yates)
+    for (let i = ungrouped.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [ungrouped[i], ungrouped[j]] = [ungrouped[j], ungrouped[i]];
+    }
+
+    // Treat each group as a single shuffleable unit
+    const units = [...ungrouped.map(item => [item]), ...Object.values(groupMap)];
+    for (let i = units.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [units[i], units[j]] = [units[j], units[i]];
+    }
+
+    // Flatten back to ordered array
+    return units.flat();
+  }
+
+  // Initial shuffle on page load
   const allItems = [...grid.querySelectorAll('.portfolio-item')];
-  for (let i = allItems.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    grid.appendChild(allItems[j]);
-    [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+  const shuffled = buildShuffledOrder(allItems);
+  shuffled.forEach(item => grid.appendChild(item));
+
+  function itemMatches(item) {
+    if (activeFilters.size === 0) return true;
+    const itemStyles = new Set((item.dataset.styles || '').split(' '));
+    return [...activeFilters].every(f => itemStyles.has(f));
   }
 
   function applyFilters() {
     const items = [...grid.querySelectorAll('.portfolio-item')];
+
+    // Determine which groups have at least one matching member
+    const matchingGroups = new Set();
+    items.forEach(item => {
+      if (item.dataset.group && itemMatches(item)) {
+        matchingGroups.add(item.dataset.group);
+      }
+    });
+
+    // An item matches if it matches directly, OR if it's in a group that has a match
+    const matches = items.filter(item => {
+      if (item.dataset.group) return matchingGroups.has(item.dataset.group);
+      return itemMatches(item);
+    });
+    const nonMatches = items.filter(item => !matches.includes(item));
 
     // Fade out
     items.forEach(item => {
@@ -2124,15 +2123,7 @@ Make photos framed in the same size on computer
     });
 
     setTimeout(() => {
-      const matches = items.filter(item => {
-        if (activeFilters.size === 0) return true;
-        const itemStyles = new Set((item.dataset.styles || '').split(' '));
-        // AND logic: item must have ALL active filters
-        return [...activeFilters].every(f => itemStyles.has(f));
-      });
-      const nonMatches = items.filter(item => !matches.includes(item));
-
-      // Reorder: matches first
+      // Reorder: matches first (preserving group adjacency), then non-matches
       matches.forEach(item => grid.appendChild(item));
       nonMatches.forEach(item => grid.appendChild(item));
 
@@ -2170,6 +2161,12 @@ Make photos framed in the same size on computer
     document.getElementById('filterClearBtn').classList.add('active');
     applyFilters();
   });
+</script>
+<script>
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
 </script>
 </body>
 </html>
