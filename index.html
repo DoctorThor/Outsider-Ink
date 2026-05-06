@@ -407,6 +407,8 @@ Make photos framed in the same size on computer
     background: radial-gradient(ellipse at 30% 40%, var(--red-glow), transparent 60%);
   }
   .about-frame-placeholder {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -414,13 +416,12 @@ Make photos framed in the same size on computer
     color: var(--muted);
     z-index: 1;
   }
-  .about-frame-placeholder svg { opacity: 0.3; }
-  .about-frame-placeholder p {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-align: center;
+  .about-frame-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
   .about-corner {
     position: absolute;
@@ -1039,6 +1040,7 @@ Make photos framed in the same size on computer
       gap: 3rem;
     }
     .about-visual { max-width: 340px; }
+    .about-frame { aspect-ratio: 1; }
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: calc((100vw - 3rem - 2px) / 2); }
     .flash-grid { grid-template-columns: repeat(2, 1fr); }
     .pricing-grid {
@@ -1602,23 +1604,6 @@ Make photos framed in the same size on computer
         <div class="overlay-info">
           <span class="overlay-style">Colorowork, Neo-Traditional, Healed</span>
           <span class="overlay-title">Cherry Blossoms</span>
-        </div>
-      </div>
-    </div>
-	<div class="portfolio-item" data-styles="colorwork neo-trad torso">
-      <img src="./assets/NeoTradFlowersAngle1.jpg" alt="Neo-Traditional Flowers Angle 1">
-      <div class="portfolio-overlay">
-        <div class="overlay-info">
-          <span class="overlay-style">Colorwork, Neo-Traditional, Torso</span>
-          <span class="overlay-title">Flowers</span>
-        </div>
-      </div>
-	  <div class="portfolio-item" data-styles="colorwork neo-trad torso">
-      <img src="./assets/NeoTradFlowersAngle2.jpg" alt="Neo-Traditional Flowers Angle 2">
-      <div class="portfolio-overlay">
-        <div class="overlay-info">
-          <span class="overlay-style">Colorwork, Neo-Traditional, Torso</span>
-          <span class="overlay-title">Flowers</span>
         </div>
       </div>
     </div>
