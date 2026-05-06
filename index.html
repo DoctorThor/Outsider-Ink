@@ -288,11 +288,13 @@ Make photos framed in the same size on computer
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: calc((100vw - 6rem - 4px) / 3);
     gap: 2px;
   }
   .portfolio-item {
     position: relative;
-    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background: var(--surface);
     cursor: none;
@@ -300,7 +302,7 @@ Make photos framed in the same size on computer
   .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
     transition: transform 0.4s ease;
@@ -1037,7 +1039,7 @@ Make photos framed in the same size on computer
       gap: 3rem;
     }
     .about-visual { max-width: 340px; }
-    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: calc((100vw - 3rem - 2px) / 2); }
     .flash-grid { grid-template-columns: repeat(2, 1fr); }
     .pricing-grid {
       grid-template-columns: 1fr;
@@ -1115,7 +1117,7 @@ Make photos framed in the same size on computer
 	<button class="filter-btn" data-filter="hand">Hand</button>
 	<button class="filter-btn" data-filter="healed">Healed</button>
   </div>
-  <div class="portfolio-grid reveal" id="portfolioGrid">
+  <div class="portfolio-grid" id="portfolioGrid">
     <!-- Replace .portfolio-placeholder with <img> tags when you have photos -->
     <div class="portfolio-item" data-styles="fine-line blackwork anime arm">
       <img src="./assets/Anime - Titan Part 1.jpg" alt="Colossal Titan">
@@ -1499,7 +1501,7 @@ Make photos framed in the same size on computer
       <img src="./assets/Fineline - Butterflies - Healed.jpg" alt="Butterflies Bursting from Skull">
       <div class="portfolio-overlay">
         <div class="overlay-info">
-          <span class="overlay-style">Fineline</span>
+          <span class="overlay-style">Fineline, Healed</span>
           <span class="overlay-title">Butterflies on My Mind</span>
         </div>
       </div>
@@ -1549,24 +1551,132 @@ Make photos framed in the same size on computer
         </div>
       </div>
     </div>
-	<!-- <div class="portfolio-item" data-styles="fine-line"> -->
-      <!-- <img src="./assets/Fineline - Roman Numerals.jpg" alt="Roman Numerals"> -->
-      <!-- <div class="portfolio-overlay"> -->
-        <!-- <div class="overlay-info"> -->
-          <!-- <span class="overlay-style">Fineline</span> -->
-          <!-- <span class="overlay-title">Roman Numerals</span> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
-	<!-- <div class="portfolio-item" data-styles="fine-line"> -->
-      <!-- <img src="./assets/Fineline - Sakura.jpg" alt="Sewing Cherry Blossoms"> -->
-      <!-- <div class="portfolio-overlay"> -->
-        <!-- <div class="overlay-info"> -->
-          <!-- <span class="overlay-style">Fineline</span> -->
-          <!-- <span class="overlay-title">Sewing Cherry Blossoms</span> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> -->
+	<div class="portfolio-item" data-styles="fine-line">
+      <img src="./assets/Fineline - Roman Numerals.jpg" alt="Roman Numerals">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Fineline</span>
+          <span class="overlay-title">Roman Numerals</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="fine-line">
+      <img src="./assets/Fineline - Sakura.jpg" alt="Sewing Cherry Blossoms">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Fineline</span>
+          <span class="overlay-title">Sewing Cherry Blossoms</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="fine-line healed">
+      <img src="./assets/Fineline - Skullerfly - Healed.jpg" alt="Skullerfly">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Fineline, Healed</span>
+          <span class="overlay-title">Skullerfly</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="blackwork fine-line">
+      <img src="./assets/Fineline - Star.jpg" alt="Starry Eye">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Blackwork, Fineline</span>
+          <span class="overlay-title">All Seeing Star</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Neo_Trad - Crab.jpg" alt="Neo-Traditional Crab">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Neo-Traditional</span>
+          <span class="overlay-title">Crab</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad healed">
+      <img src="./assets/Neo_Trad - Floral - Healed.jpg" alt="Neo-Traditional Cherry Blossoms">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorowork, Neo-Traditional, Healed</span>
+          <span class="overlay-title">Cherry Blossoms</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad torso">
+      <img src="./assets/Neo_Trad - Flowers Angle 1.jpg" alt="Neo-Traditional Flowers">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Neo-Traditional, Torso</span>
+          <span class="overlay-title">Flowers</span>
+        </div>
+      </div>
+	  <div class="portfolio-item" data-styles="colorwork neo-trad torso">
+      <img src="./assets/Neo_Trad - Flowers Angle 2.jpg" alt="Neo-Traditional Flowers">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Neo-Traditional, Torso</span>
+          <span class="overlay-title">Flowers</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Trad - Bomber.jpg" alt="Traditional Bomb Tattoo">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Traditional</span>
+          <span class="overlay-title">Bomb</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Trad - Death Butterfly.jpg" alt="Traditional Death Butterfly">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Traditional</span>
+          <span class="overlay-title">Death Butterfly</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Trad - Magnolia.jpg" alt="Traditional Magnolia">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Traditional</span>
+          <span class="overlay-title">Magnolia with Antlers</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="blackwork neo-trad">
+      <img src="./assets/Trad - Mermaid.jpg" alt="Traditional Mermaid Tattoo">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Blackwork, Traditional</span>
+          <span class="overlay-title">Traditional Mermaid</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Trad - Skull.jpg" alt="Traditional Skull Tattoo">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Traditional</span>
+          <span class="overlay-title">Leaves on My Mind</span>
+        </div>
+      </div>
+    </div>
+	<div class="portfolio-item" data-styles="colorwork neo-trad">
+      <img src="./assets/Trad - Twin Heads Coffee Cup.jpg" alt="I Really Don't Know">
+      <div class="portfolio-overlay">
+        <div class="overlay-info">
+          <span class="overlay-style">Colorwork, Traditional</span>
+          <span class="overlay-title">Twin Heads and Coffee Cups</span>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 
